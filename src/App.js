@@ -1,14 +1,23 @@
 import React from 'react';
 import './index.css';
-import Header from './components/Header';
+import Registration from './components/Registration';
+import Landing from './components/Landing';
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+
+
 
 function App() {
   return (
     <div className="App">
+      <Router>
+        <Routes>
      
-      <div className="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
-        <Header />
-      </div>
+        <Route path ="/" element={<Landing />} />
+        <Route path ="/register" element={<Registration />} />
+        </Routes>
+        </Router>
+        
+      
       
     </div>
   );
