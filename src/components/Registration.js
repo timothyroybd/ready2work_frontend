@@ -39,65 +39,7 @@ const Registration = () => {
         </button>{' '}
       </div>{' '}
       <div className="w-full max-w-md">
-        {' '}
-        {selectedForm === 'developer' && (
-          <form className="bg-white shadow-md rounded-lg p-6">
-            {' '}
-            <h3 className="text-xl font-semibold mb-4">
-              Developer Registration
-            </h3>{' '}
-            {/* Developer registration fields */}{' '}
-            <div className="mb-4">
-              {' '}
-              <label
-                className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="developer-name"
-              >
-                {' '}
-                Name{' '}
-              </label>{' '}
-              <input
-                className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
-                type="text"
-                id="developer-name"
-                placeholder="Enter your name"
-              />{' '}
-            </div>{' '}
-            {/* Add more fields as needed */}{' '}
-            <button className="w-full bg-gray-800 text-white py-2 px-4 rounded-lg hover:bg-gray-700">
-              Submit
-            </button>{' '}
-          </form>
-        )}{' '}
-        {selectedForm === 'business' && (
-          <form className="bg-white shadow-md rounded-lg p-6">
-            {' '}
-            <h3 className="text-xl font-semibold mb-4">
-              Business Registration
-            </h3>{' '}
-            {/* Business registration fields */}{' '}
-            <div className="mb-4">
-              {' '}
-              <label
-                className="block text-gray-700 text-sm font-bold mb-2"
-                htmlFor="business-name"
-              >
-                {' '}
-                Business Name{' '}
-              </label>{' '}
-              <input
-                className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
-                type="text"
-                id="business-name"
-                placeholder="Enter your business name"
-              />{' '}
-            </div>{' '}
-            {/* Add more fields as needed */}{' '}
-            <button className="w-full bg-gray-800 text-white py-2 px-4 rounded-lg hover:bg-gray-700">
-              Submit
-            </button>{' '}
-          </form>
-        )}{' '}
+       
       </div>{' '}
         <DeveloperRegistraion />
 
