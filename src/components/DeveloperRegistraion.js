@@ -4,7 +4,7 @@ import '../index.css';
 import PersonalInfo from './form_elements/PersonalInfo';
 import languagedb from '../data/languages';
 import frameworks from '../data/framework';
-import Skills from './form_elements/Skills';
+import SkillSelector from '../components/form_elements/Skills';
 const DeveloperRegistrationPage = () => {
   const [languages, setLanguages] = useState(() =>
     languagedb.reduce(
@@ -37,12 +37,13 @@ const DeveloperRegistrationPage = () => {
       <form className="bg-white shadow-md rounded-lg p-6">
         <h3 className="text-xl font-semibold mb-4">Developer Registration</h3>
         <PersonalInfo />
-        <Skills 
+        {/* <Skills 
         title= "Programming Lanugages"
         skills={languages}
         onChange={handleLanguageChange}
         customSkill={customLanguage}
-        onCustomChange={handleCustomLanguageChange}/>
+        onCustomChange={handleCustomLanguageChange}/> */}
+        <SkillSelector title="Programming Languages" data={languagedb} />
       
       
 
