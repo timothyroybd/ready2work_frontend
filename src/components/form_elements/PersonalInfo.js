@@ -1,61 +1,51 @@
 import React from 'react';
-import countries from '../../data/country';
-
+import countries from '../../data/Country';
+import TextInput from './TextInput';
+import classNames from '../../utils/ClassNames';
 const PersonalInfo = () => {
+  const required = true;
+
+  
   return (
     <div>
       {/* Name */}
       <div className="mb-4">
-        
-        <label className="block text-gray-700 text-sm font-bold mb-2">
-   
-          Name
-        </label>
-        <input
-          className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
+        <label className={classNames.label}>Name</label>
+        <TextInput
+          classNames={classNames.textInput}
           type="text"
           placeholder="Enter your name"
-          required
+          required={required}
         />
       </div>
 
       {/*Email  */}
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2">
-          
-          Email
-        </label>
-        <input
-          className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
+        <label className={classNames.label}>Email</label>
+
+        <TextInput
+          classNames={classNames.textInput}
           type="text"
           placeholder="Enter your email"
+          required={required}
         />
       </div>
 
       {/*Phone  */}
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2">
-          
-          Phone
-        </label>
-        <input
-          className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
+        <label className={classNames.label}>Phone</label>
+        <TextInput
+          classNames={classNames.textInput}
           type="tel"
-          required
           placeholder="Enter your phone number"
+          required={required}
         />
       </div>
 
       {/*Location  */}
       <div className="mb-4">
-        <label className="block text-gray-700 text-sm font-bold mb-2">
-          
-          Location
-        </label>
-        <select
-          className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
-          required
-        >
+        <label className={classNames.label}>Location</label>
+        <select className={classNames.textInput} required>
           {countries.map((country) => (
             <option key={country} value={country}>
               {country}
