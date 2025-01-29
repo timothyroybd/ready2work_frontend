@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import DeveloperRegistraion from './DeveloperRegistraion';
+import CompanyRegistration from './CompanyRegistraion';
+
 
 const Registration = () => {
   const [selectedForm, setSelectedForm] = useState('developer');
@@ -39,9 +41,10 @@ const Registration = () => {
         </button>{' '}
       </div>{' '}
       <div className="w-full max-w-md">
+         {selectedForm === 'developer' ? <DeveloperRegistraion /> : <CompanyRegistration />}
        
       </div>{' '}
-        <DeveloperRegistraion />
+       
 
     </div>
   );

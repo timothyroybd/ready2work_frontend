@@ -7,7 +7,16 @@ import frameworks from '../data/Frameworks';
 import SkillSelector from '../components/form_elements/Skills';
 import OtherSkills from '../data/OtherSkills';
 import WorkExperience from './form_elements/WorkExperience';
-import Preferences from './form_elements/Preferences';
+import ProjectPreferences from './form_elements/ProjectPreferences';
+import languages from '../data/SpokenLanguages';
+import AdditionalDetails from './form_elements/AdditionalDetails';
+import softSkills from '../data/SoftSkills';
+import Button from './other_components/Button';
+import classNames from '../utils/ClassNames';
+const clickHandler = () => {
+
+}
+
 const DeveloperRegistrationPage = () => {
   
 
@@ -20,13 +29,19 @@ const DeveloperRegistrationPage = () => {
         <SkillSelector title="Programming Languages" data={languagedb} />
         <SkillSelector title="Frameworks" data={frameworks} />
         <SkillSelector title="Ohter Skills" data={OtherSkills} />
+        <SkillSelector title="Soft Skills" data = {softSkills} />
+
 
         <WorkExperience />
+        <ProjectPreferences />
+        <SkillSelector title = "Languages" data ={languages} />
+        <AdditionalDetails />
+        
+
 
         {/* Add more fields as needed */}
-        <button className="w-full bg-gray-800 text-white py-2 px-4 rounded-lg hover:bg-gray-700">
-          Submit
-        </button>
+       
+        <Button children={"Submit"} onClickFunction={clickHandler()} className={classNames.button} type = "submit" />
       </form>
     </div>
   );

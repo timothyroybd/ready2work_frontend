@@ -12,31 +12,25 @@ const projectTypes = [
   "Frontend Development",
   "Backend Development",
   "UI/UX Design",
-  "Progressive Web Apps (PWA)",
+  
   "Single Page Applications (SPA)",
 
   // E-commerce and Platforms
   "E-commerce Platforms",
 
-  "Content Management Systems (CMS)",
-  "Customer Relationship Management (CRM)",
+  "CRM/CMS",
 
   // Data and Analytics
-  "Data Visualization",
-  "Big Data Projects",
-  "Data Science and Machine Learning",
+  "Data Analytics",
+
   
 
   // DevOps and Infrastructure
-  "DevOps Automation",
+  "DevOps",
   "CI/CD Pipelines",
   "Cloud Infrastructure",
   "Serverless Applications",
-  "Microservices Architecture",
   
-
-  
-  "Cybersecurity Projects",
   
 
   
