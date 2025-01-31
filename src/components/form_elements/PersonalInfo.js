@@ -8,29 +8,8 @@ const PersonalInfo = () => {
   
   return (
     <div>
-      {/* Name */}
-      <div className="mb-4">
-        <label className={classNames.label}>Name</label>
-        <TextInput
-          classNames={classNames.textInput}
-          type="text"
-          placeholder="Enter your name"
-          required={required}
-        />
-      </div>
-
-      {/*Email  */}
-      <div className="mb-4">
-        <label className={classNames.label}>Email</label>
-
-        <TextInput
-          classNames={classNames.textInput}
-          type="text"
-          placeholder="Enter your email"
-          required={required}
-        />
-      </div>
-
+   
+     
       {/*Phone  */}
       <div className="mb-4">
         <label className={classNames.label}>Phone</label>

@@ -4,7 +4,7 @@ import '../index.css';
 import PersonalInfo from './form_elements/PersonalInfo';
 import languagedb from '../data/ProgrammingLanguages';
 import frameworks from '../data/Frameworks';
-import SkillSelector from '../components/form_elements/Skills';
+import SkillSelector from './form_elements/Skills';
 import OtherSkills from '../data/OtherSkills';
 import WorkExperience from './form_elements/WorkExperience';
 import ProjectPreferences from './form_elements/ProjectPreferences';
@@ -21,9 +21,9 @@ const DeveloperRegistrationPage = () => {
   
 
   return (
-    <div className="w-full max-w-lg">
+    <div className="w-full max-w-lg mx-auto flex justify-center items-center min-h-screen">
       <form className="bg-white shadow-md rounded-lg p-6">
-        <h3 className="text-xl font-semibold mb-4">Developer Registration</h3>
+        <h3 className="text-xl font-semibold mb-4">Developer Info</h3>
         <PersonalInfo />
 
         <SkillSelector title="Programming Languages" data={languagedb} />

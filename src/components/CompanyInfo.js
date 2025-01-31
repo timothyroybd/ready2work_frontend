@@ -9,9 +9,10 @@ const clickHandler = () => {
 
 const CompanyRegistration = () => {
     return (
-        <div className="w-full max-w-lg">
-            <form className="bg-white shadow-md rounded-lg p-6">
-            <h1>Company Registration</h1>
+        <div className="w-full max-w-lg mx-auto flex justify-center items-center h-auto">
+            <form className="bg-white shadow-md rounded-lg p-4 w-full">
+                 <h3 className="text-xl font-semibold mb-4">Company Registration</h3>
+          
             <div>
             <label className={classNames.label}>Company Name</label>
             <TextInput classNames={classNames.textInput} type = "text" placeholder="Enter your company name" required={true} />

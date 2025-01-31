@@ -1,16 +1,13 @@
 import React from 'react';
 import '../index.css'; // Make sure Tailwind CSS is imported
-
+import Header from './Header';
+import Footer from './Footer';
 const LandingPage = () => {
   return (
     <div className=" min-h-screen  flex flex-col">
 
       {/* Header */}
-      <header className="py-4">
-        <div className="max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="text-2xl font-bold text-gray-800">Ready2Work</h1>
-        </div>
-      </header>
+     <Header />
 
       {/* Main Content */}
       <main className="flex-grow">
@@ -22,7 +19,12 @@ const LandingPage = () => {
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 mb-6 pt-8">Connecting Developers with Opportunities</h2>
             <p className="text-xl text-gray-700 mb-8">Join the best tech startups in the industry and find the perfect team for your next project.</p>
             </div>
+
+            <div className='flex flex-row justify-center gap-6'>
             <a href="/register" className="text-white bg-gray-800 hover:bg-gray-900 py-3 px-6 rounded-lg transition duration-300 ease-in-out">Get Started</a>
+
+            <a href="/login" className="text-base text-gray-800 border border-gray-800 bg-white hover:bg-gray-200 py-3 px-6 rounded-lg transition duration-300 ease-in-out ">Login</a>
+            </div>
           </div>
         </section>
 
@@ -33,17 +35,20 @@ const LandingPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div>
                 <h4 className="text-xl font-semibold mb-4">For Companies</h4>
-                <p className="text-gray-700 mb-6">Reduce recruitment time and effort while ensuring high-quality solutions with carefully selected developers.</p>
+                <p className="text-gray-700 mb-6">At Ready2Work, we understand that every project has unique needs. That’s why we offer companies the opportunity to find teams perfectly aligned with their tasks. We connect your business with developers organized into teams with complementary skills, ready to work on customized solutions. This ensures efficient results, hassle-free, and within the timeline you need.
+</p>
                 
               </div>
               <div>
                 <h4 className="text-xl font-semibold mb-4">For Developers</h4>
-                <p className="text-gray-700 mb-6">Gain experience in real projects, connect with industry professionals, and grow your skills.</p>
+                <p className="text-gray-700 mb-6">Sign up on our platform and become part of our developer community. When a task or project matches your skills and experience, we’ll notify you immediately so you can start working on real challenges and continue growing professionally. Connect with opportunities tailored to you!
+</p>
               
               </div>
             </div>
           </div>
         </section>
+       
 
         {/* Testimonials Section */}
         <section className="bg-gray-50 py-16">
@@ -74,11 +79,7 @@ const LandingPage = () => {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-700 py-6 text-white text-center">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p>&copy; 2025 Ready2Work. All rights reserved.</p>
-        </div>
-      </footer>
+     <Footer />
 
     </div>
   );

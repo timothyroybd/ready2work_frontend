@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
-import DeveloperRegistraion from './DeveloperRegistraion';
-import CompanyRegistration from './CompanyRegistraion';
+
+import RegistrationForm from './RegistrationForm';
+import Header from './Header';
+import Footer from './Footer';
 
 
-const Registration = () => {
+const RegistrationToggle = () => {
   const [selectedForm, setSelectedForm] = useState('developer');
   const handleFormToggle = (formType) => {
     setSelectedForm(formType);
   };
 //
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center">
+    <div >
+      <Header />
       {' '}
+      <div className="min-h-screen bg-gray-50 flex flex-col items-center">
       <h2 className="text-3xl font-semibold text-gray-800 my-6">
         Register
       </h2>{' '}
@@ -41,13 +45,14 @@ const Registration = () => {
         </button>{' '}
       </div>{' '}
       <div className="w-full max-w-md">
-         {selectedForm === 'developer' ? <DeveloperRegistraion /> : <CompanyRegistration />}
+         {selectedForm === 'developer' ? <RegistrationForm title ="Developer" /> : <RegistrationForm title ="Company" />}
        
       </div>{' '}
+      </div>
        
-
+        <Footer />
     </div>
   );
 };
 
-export default Registration;
+export default RegistrationToggle;

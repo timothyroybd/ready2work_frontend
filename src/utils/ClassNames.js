@@ -6,7 +6,9 @@ const classNames = {
   label: 'block text-gray-700 text-sm font-bold mb-2',
   h4: 'text-lg font-semibold mb-3',
   checkbox_label: 'inline-flex items-center',
-  button: "w-full bg-gray-800 text-white py-2 px-4 rounded-lg hover:bg-gray-700"
+  button: "w-full bg-gray-800 text-white py-2 px-4 rounded-lg hover:bg-gray-700",
+  form: "bg-white shadow-md rounded-lg p-6",
+  form_wrapper: "w-full max-w-lg"
 };
 
 export default classNames;
