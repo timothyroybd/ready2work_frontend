@@ -3,6 +3,7 @@ const cors = require("cors")
 const dotenv = require("dotenv")
 const db = require("./config/db")
 const authRoutes = require('./routes/authRoutes')
+const developerRoutes = require("./routes/developerRoutes")
 
 dotenv.config()
 
@@ -14,6 +15,7 @@ app.use(cors())
 app.use(express.json())
 
 app.use("/api/auth", authRoutes)
+app.use("/api/developer", developerRoutes)
 
 app.get("/", (req, res) => {
     res.send("Hello, World! Welcome to my Express server.");

@@ -10,4 +10,8 @@ const db = mysql.createPool({
 })
 
 const promiseDb = db.promise();
+if(promiseDb){
+    console.log('Connected to DB')
+   
+}
 module.exports = {db, promiseDb}
