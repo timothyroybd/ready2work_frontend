@@ -106,7 +106,7 @@ const adminLogin = async(req, res) => {
             return res.status(401).json({message: "Invalid admin credentials"})
         }
         const token = jwt.sign(
-            {userId: admin[0].id, email: admin[0].email, userType: "admin" },
+            {userId: admin[0].id, email: admin[0].email, userType: "admin", is_admin: admin[0].is_admin === 1 },
             process.env.JWT_SECRET,
             {expiresIn: "7d"}
         )
@@ -117,7 +117,8 @@ const adminLogin = async(req, res) => {
             user: {
                 id: admin[0].id,
                 email: admin[0].email,
-                userType: "admin"
+                userType: "admin",
+                is_admin: admin[0].is_admin
             }
         })
     } catch(error){
