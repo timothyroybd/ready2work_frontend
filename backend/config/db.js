@@ -14,4 +14,4 @@ if(promiseDb){
     console.log('Connected to DB')
    
 }
-module.exports = {db, promiseDb}
+module.exports = { promiseDb}
