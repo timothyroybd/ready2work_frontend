@@ -1,4 +1,5 @@
 const {promiseDb} = require("../config/db")
+const { get } = require("../routes/authRoutes")
 
 const saveBusinessProfile = async(req,res) => {
     try{
@@ -86,7 +87,7 @@ const createTask = async(req, res) => {
     const taskStatus = status || "Open"
     const taskPriority = priority || "Medium"
     await promiseDb.query(
-        `INSERT INTO tasks (user_id, task_name, description, required_skills, experience_level, status, priority, due_date) VALUES(?,?,?,?,?,?,?,?)`, [user_id, task_name, description, formattedSkills, experience_level, status, priority, due_date ]
+        `INSERT INTO tasks (user_id, task_name, description, required_skills, experience_level, status, priority, due_date) VALUES(?,?,?,?,?,?,?,?)`, [user_id, task_name, description, formattedSkills, experience_level, taskStatus, taskPriority, due_date ]
     )
     res.status(201).json({message: "Task created successfully"})
    } catch(error){
@@ -96,4 +97,83 @@ const createTask = async(req, res) => {
 
 
 }
-module.exports = {saveBusinessProfile, getBusinessProfile, createTask}
+
+const getTask = async(req, res) => {
+    const user_id = req.user.userId
+   
+    if(!user_id ){
+        return res.status(403).json({message: "Unauthorized access requested"})
+    }
+    const [tasks] = await promiseDb.query(
+        `SELECT * FROM tasks WHERE user_id = ?`, [user_id]
+    )
+    return res.status(200).json(tasks)
+}
+
+const updateTask = async(req, res) => {
+    const user_id = req.user.userId
+    const {id} = req.params
+    const {task_name, description, required_skills, experience_level, status, priority, due_date } = req.body
+    if(!user_id){
+        return res.status(403).json({message: "unauthorized 403"})
+    }
+
+    try{
+        let query = `UPDATE tasks SET `
+    let queryParams = []
+
+    const required_skill_str = Array.isArray(required_skills) ? required_skills.join(","): required_skills || "";
+
+    if(task_name !== undefined){
+        query += `task_name = ?, `
+        queryParams.push(task_name)
+    }
+      if(description !== undefined){
+        query += `description = ?, `
+        queryParams.push(description)
+    }
+      if(required_skills !== undefined){
+        query += `required_skills = ?, `
+        queryParams.push(required_skill_str)
+    }
+      if(experience_level !== undefined){
+        query += `experience_level = ?, `
+        queryParams.push(experience_level)
+    }
+      if(status !== undefined){
+        query += `status = ?, `
+        queryParams.push(status)
+    }
+      if(priority !== undefined){
+        query += `priority = ?, `
+        queryParams.push(priority)
+    }
+      if(due_date !== undefined){
+        query += `due_date = ?, `
+        queryParams.push(due_date)
+    }
+    if(queryParams.length > 0){
+        query = query.slice(0, -2)
+        query += ` WHERE id = ?`
+        queryParams.push(id)
+         await promiseDb.query(query, queryParams  )
+
+         res.status(200).json({message: "Task updated successfully"})
+    }else {
+        res.status(400).json({message: "Task updated successfully"})
+    }
+    }catch(error){
+        console.log("Update task error", error);
+        res.status(500).json({message: "Internal Server Error"})
+    }
+
+   
+
+    
+
+   
+
+    
+
+}
+module.exports = {saveBusinessProfile, getBusinessProfile, createTask, getTask, updateTask}

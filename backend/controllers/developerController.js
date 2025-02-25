@@ -149,7 +149,7 @@ const editDeveloperPorifle = async(req, res) => {
 
     if(phone !== undefined){
         query += "phone = ? "
-        queryParams.push([phone])
+        queryParams.push(phone)
     }
     if(location !== undefined){
         query += "location = ?, "
